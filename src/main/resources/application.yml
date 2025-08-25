@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: crediya-gateway
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: crediya-auth
+              uri: http://localhost:8081
+              predicates:
+                - Path=/v1/auth/**
+
+server:
+  port: 8080
+
